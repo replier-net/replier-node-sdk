@@ -2,12 +2,24 @@
   "name": "replier-sdk",
   "version": "1.0.0",
   "description": "Official Node.js / TypeScript SDK for the Replier.net WhatsApp API",
-  "license": "MIT",
+  "keywords": [
+    "whatsapp",
+    "replier",
+    "api",
+    "sdk",
+    "messaging"
+  ],
   "homepage": "https://www.replier.net",
-  "keywords": ["whatsapp", "replier", "api", "sdk", "messaging"],
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/esm/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/replier-net/replier-node-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/replier-net/replier-node-sdk.git"
+  },
+  "license": "MIT",
+  "author": "Badwe Najjar",
+  "type": "commonjs",
   "exports": {
     ".": {
       "types": "./dist/esm/index.d.ts",
@@ -15,13 +27,21 @@
       "require": "./dist/cjs/index.js"
     }
   },
-  "files": ["dist", "README.md"],
-  "engines": { "node": ">=18" },
+  "main": "dist/cjs/index.js",
+  "types": "dist/esm/index.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/postbuild.js",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "typescript": "^5.4.0"
-  }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "module": "dist/esm/index.js"
 }
